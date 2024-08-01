@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #09090b;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('./bg.svg') ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.citacoes {
+    text-align: center;
+    background-color: #18181b67;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid #27272a;
+    max-width: 650px;
+
+
+}
+
+.autor {
+    color: #fb923c;
+    margin-top: 24px;
+    font-weight: bold;
+}
+
+.citacoes .botao {
+    margin-top: 40px;
+    background-color: #ea580c;
+    border: none;
+    padding: 8px 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #431407;
+}

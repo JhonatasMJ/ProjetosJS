@@ -8,7 +8,7 @@ Com um simples clique gere citações para motivar seu dia!
 
 ## Screenshots
 
-![App Screenshot](citacoes.png)
+![App Screenshot](/imgs/citações.PNG)
 
 ## Conceitos Utilizados 💻
 

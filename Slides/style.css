@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.slide {
+    display: flex;
+}
+
+
+.wrapper {
+    overflow: hidden;
+}
+
+.slide li {
+    flex-shrink: 0; /* Não diminui a imagem pra caber na div */
+    width: 80vw;
+    max-width: 800px;
+    list-style: none;
+    margin: 0 20px;
+}
+
+.slide {
+    transform: translate3d(200px, 0px, 0px);
+}

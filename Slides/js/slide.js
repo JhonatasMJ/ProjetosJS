@@ -7,6 +7,7 @@ export default class Slide {
             startX: 0,
             movement: 0,
         }
+        this.activeClass = 'ativo'
     }
 
     transition(active) {
@@ -70,11 +71,7 @@ export default class Slide {
         this.wrapper.addEventListener('touchend', this.onEnd);
     }
 
-    bindEvents() {
-        this.onStart = this.onStart.bind(this);
-        this.onEnd = this.onEnd.bind(this);
-        this.onMove = this.onMove.bind(this);
-    }
+
 
     //Slides Config
 
@@ -108,9 +105,16 @@ export default class Slide {
         this.moveSlide(activeSlide.position);
         this.slidesIndexNav(index);
         this.dist.finalPosition = activeSlide.position
+        this.changeActiveClass();
+    }
+
+    changeActiveClass() {
+        this.slideArray.forEach(item => item.element.classList.remove(this.activeClass)) //Só adiciona no que estiver ativo no momento
+        this.slideArray[this.index.active].element.classList.add(this.activeClass);
     }
 
     activePrevSlide() {
+   
         if (this.index.prev !== undefined) {
             this.changeSlide(this.index.prev)
         }
@@ -122,12 +126,33 @@ export default class Slide {
         }
     }
 
+
+    onResize() {
+        setTimeout(() =>{
+            this.slideConfig();
+            this.changeSlide(this.index.active);
+        }, 1000)
+    }
+
+
+    addResizeEvent() {
+        window.addEventListener('resize', this.onResize)
+    }
+
+    bindEvents() {
+        this.onStart = this.onStart.bind(this);
+        this.onEnd = this.onEnd.bind(this);
+        this.onMove = this.onMove.bind(this);
+        this.onResize = this.onResize.bind(this)
+    }
+
     init() {
         this.bindEvents();
         this.addSlideEvents();
         this.transition(true);
         this.slideConfig(); // Configura os slides antes de qualquer mudança
         this.changeSlide(0); // Inicia com o primeiro slide
+        this.addResizeEvent()
         return this;
     }
     

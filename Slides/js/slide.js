@@ -143,7 +143,10 @@ export default class Slide {
         this.onStart = this.onStart.bind(this);
         this.onEnd = this.onEnd.bind(this);
         this.onMove = this.onMove.bind(this);
+        this.activePrevSlide = this.activePrevSlide.bind(this)
+        this.activeNextSlide = this.activeNextSlide.bind(this)
         this.onResize = this.onResize.bind(this)
+
     }
 
     init() {
@@ -156,4 +159,17 @@ export default class Slide {
         return this;
     }
     
+}
+
+
+export class SlideNav extends Slide {
+    addArrow(prev, next) { //Definindo botoes para passar slides
+        this.prevElement = document.querySelector(prev)
+        this.nextElement = document.querySelector(next)
+        this.addArrowEvent()
+    }
+    addArrowEvent() { 
+        this.prevElement.addEventListener('click', this.activePrevSlide); //Botao de voltar
+        this.nextElement.addEventListener('click', this.activeNextSlide); //Botao de  prox
+    }
 }

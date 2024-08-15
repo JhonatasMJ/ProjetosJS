@@ -18,5 +18,22 @@ Com um simples clique gere citações para motivar seu dia!
 ✔️ Eventos
 ✔️ DOM
 
+# Projeto 02 - Slides 
+
+Slides com navegação e Paginação
+
+## Screenshots
+
+![App Screenshot](/imgs/slide.PNG)
+
+## Conceitos Utilizados 💻
+
+✔️ Classes
+✔️ Funções
+✔️ Eventos
+✔️ DOM
+✔️ Arrays
+✔️ Objetos
+✔️ Estrutura de Repetição
 
 
